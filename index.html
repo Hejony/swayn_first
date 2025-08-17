@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sway'n Teaser Game</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+    <div id="game-container">
+        <!-- 시작 화면 -->
+        <section id="start-screen" aria-modal="true">
+            <h1>오늘의 불안, 어떤 방에서 풀어볼까요?</h1>
+            <button id="start-button" type="button">게임 시작</button>
+        </section>
+
+        <!-- 게임 화면 -->
+        <section id="game-screen" aria-live="polite">
+            <img id="character" alt="캐릭터" />
+            <div id="products" class="products"></div>
+            <p id="hint"></p>
+        </section>
+
+        <!-- 엔딩 화면 -->
+        <section id="ending-screen">
+            <video id="ending-video" src="./assets/video/ending_animation.mp4" autoplay loop muted playsinline></video>
+            <img id="final-character" src="./assets/images/character/character_final.png" alt="완성 캐릭터" />
+            <h2>나만의 Sway'n 꿀잠 나이트 루틴 완성!</h2>
+            <p>당신의 밤을 위한 완벽한 리추얼, Sway'n이 곧 찾아옵니다.</p>
+            <div class="links">
+                <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+                <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+                <button id="share-btn" type="button">공유하기</button>
+            </div>
+        </section>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
