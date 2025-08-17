@@ -8,11 +8,40 @@
 </head>
 <body>
     <div id="game-container">
-        <!-- 시작 화면 -->
-        <section id="start-screen" aria-modal="true">
-            <h1>오늘의 불안, 어떤 방에서 풀어볼까요?</h1>
-            <button id="start-button" type="button">게임 시작</button>
-        </section>
+        <!-- 시작 화면 (이 블록만 교체) -->
+        <div id="start-screen">
+            <!-- 배경 일러스트(선택) -->
+            <img class="title-bg" src="./assets/images/ui/title_bg.png" alt="" />
+
+            <!-- 로고 이미지가 있다면 이걸 쓰고, 없으면 텍스트 로고가 보임 -->
+            <img class="logo-img" src="./assets/images/ui/title_logo.png" alt="슈슈의 Dreamy House" />
+
+            <img class="title-char" src="./assets/images/character/title_character.png" alt="슈슈" />
+
+            <!-- 말풍선 -->
+            <div class="speech">
+                오늘따라 잠이 안 온다고?<br />그렇다면 나를 따라와 볼래?
+            </div>
+
+            <!-- 버튼들 -->
+            <div class="title-actions">
+                <button id="start-button" class="btn-primary">게임 시작</button>
+                <button id="howto-button" class="btn-secondary">게임 설명</button>
+            </div>
+        </div>
+
+        <!-- (선택) 게임 설명 모달 -->
+        <div id="howto-modal" aria-hidden="true">
+            <div class="howto-card">
+                <h2>게임 설명</h2>
+                <ol>
+                    <li>각 방에서 하단의 제품 아이콘을 <b>캐릭터로 드래그</b>하세요.</li>
+                    <li>2단계는 <b>크림 → 괄사</b> 순서를 지켜야 해요.</li>
+                    <li>모든 단계를 완료하면 <b>엔딩 영상</b>이 재생됩니다.</li>
+                </ol>
+                <button id="howto-close" class="btn-secondary">확인</button>
+            </div>
+        </div>
 
         <!-- 게임 화면 -->
         <section id="game-screen" aria-live="polite">
@@ -23,13 +52,13 @@
 
         <!-- 엔딩 화면 -->
         <section id="ending-screen">
-            <video id="ending-video" src="./assets/video/ending_animation.mp4" autoplay loop muted playsinline></video>
+            <video id="ending-video" src="./assets/images/video/ending_animation.mp4" autoplay loop muted playsinline></video>
             <img id="final-character" src="./assets/images/character/character_final.png" alt="완성 캐릭터" />
-            <h2>나만의 Sway'n 꿀잠 나이트 루틴 완성!</h2>
+            <h2>나만의 Sway'n 나이트 루틴 완성!</h2>
             <p>당신의 밤을 위한 완벽한 리추얼, Sway'n이 곧 찾아옵니다.</p>
             <div class="links">
                 <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
-                <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+                <button id="restart-btn" type="button">다시하기</button>
                 <button id="share-btn" type="button">공유하기</button>
             </div>
         </section>
